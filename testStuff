@@ -1,0 +1,38 @@
+import unittest
+
+# class TestVendingMachine(unittest.TestCase):
+#     def give_change(self, amount):
+#         remainder = amount
+#         coins = [200,100,50,20,10,5,2,1]
+#         change = []
+#         for denom in coins:
+#             result = remainder - denom
+#             if result >= 0:
+#                 remainder = result
+#                 change.append(denom)
+#
+#         print change
+
+class TestVendingMachine(unittest.TestCase):
+    def give_change(self, amount):
+        coins = [200, 100, 50, 20, 10, 5, 2, 1]
+        change = []
+        for coin in coins:
+            while amount >= coin:
+                change.append(coin)
+                amount -= coin
+        return change
+
+    def test_1_change(self):
+            coins = self.give_change(650)
+            self.assertEqual(coins,[200,200,200,50])
+
+    def test_2_change(self):
+            coins = self.give_change(50)
+            self.assertEqual(coins,[50])
+
+    def test_3_change(self):
+            coins = self.give_change(1050)
+            self.assertEqual(coins,[200,200,200,200,200,50])Ducati109
+
+
