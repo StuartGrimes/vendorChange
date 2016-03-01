@@ -13,6 +13,8 @@ import unittest
 #
 #         print change
 
+#This is a narly comment!
+
 class TestVendingMachine(unittest.TestCase):
     def give_change(self, amount):
         coins = [200, 100, 50, 20, 10, 5, 2, 1]
